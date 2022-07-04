@@ -11,3 +11,11 @@ git cms-init
 git clone https://github.com/HephyAnalysisSW/ParticleNetLepton_Analysis.git
 
 ./setup_106X.sh
+
+For a test run:
+
+#Set up voms proxy
+
+cd ParticleNetLepton_Analysis/histmaker
+
+python plot_inputs.py --sample TT_Semilep --small
