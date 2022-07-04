@@ -2,22 +2,34 @@
 
 ## Follow the instructions below to set up the framework:
 
-export SCRAM_ARCH=slc7_amd64_gcc700
+- export SCRAM_ARCH=slc7_amd64_gcc700
 
-cmsrel CMSSW_10_6_0
+- cmsrel CMSSW_10_6_0
 
-cd CMSSW_10_6_0/src
+- cd CMSSW_10_6_0/src
 
-cmsenv
+- cmsenv
 
-git clone https://github.com/HephyAnalysisSW/ParticleNetLepton_Analysis.git
+- git clone https://github.com/HephyAnalysisSW/ParticleNetLepton_Analysis.git
 
-./ParticleNetLepton_Analysis/setup_106X.sh
+- ./ParticleNetLepton_Analysis/setup_106X.sh
 
-For a test run:
+## For a test run:
 
-#Set up voms proxy
+- voms-proxy-init -rfc -voms cms -valid 48:00
 
-cd ParticleNetLepton_Analysis/histmaker
+- cd ParticleNetLepton_Analysis/histmaker
 
-python plot_inputs.py --sample TT_Semilep --small
+- cmsenv
+
+- python plot_inputs.py --sample TT_Semilep --small
+
+## For submitting batch job:
+
+- voms-proxy-init -rfc -voms cms -valid 48:00
+
+- cd ParticleNetLepton_Analysis/histmaker
+
+- cmsenv
+
+- ./submit_jobs.sh
