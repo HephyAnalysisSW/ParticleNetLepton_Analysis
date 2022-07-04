@@ -1,6 +1,10 @@
 # ParticleNetLepton_Analysis
 
-cmsrel CMSSSW_10_6_0
+## Follow the instructions below to set up the framework:
+
+export SCRAM_ARCH=slc7_amd64_gcc700
+
+cmsrel CMSSW_10_6_0
 
 cd CMSSW_10_6_0/src
 
