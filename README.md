@@ -14,7 +14,7 @@ git cms-init
 
 git clone https://github.com/HephyAnalysisSW/ParticleNetLepton_Analysis.git
 
-./setup_106X.sh
+./ParticleNetLepton_Analysis/setup_106X.sh
 
 For a test run:
 
