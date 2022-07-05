@@ -18,5 +18,6 @@ def make_dirs( dirs ):
 dirs = {}
 
 dirs['TT_Semilep']         = ["TT_Semilep"]
-TT_Semilep = Sample.fromDirectory(name="TT_Semilep", redirector = None, treeName="Events", isData=False, color=ROOT.kBlack, texName="ZH", directory=make_dirs( dirs['TT_Semilep']),xSection=1)
+TT_dir = "/eos/vbc/experiments/cms/store/user/agruber/TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/ParticleNetLepton_UL2018_TT_Semilep/220527_142442/0000/"
+TT_Semilep = Sample.fromDirectory(name="TT_Semilep", redirector = None, treeName="Events", isData=False, color=ROOT.kBlack, texName="ZH", directory=TT_dir,xSection=1)
 TT_Semilep.normalization = 1
