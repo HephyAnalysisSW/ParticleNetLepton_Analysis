@@ -63,11 +63,12 @@ if args.small:
 #declaring variables for histograms
 
 PFCand_list=[
+['PFCand_pt_log', 60, -2, 4],
+['PFCand_pt_rel_log', 40, -8, 0],
+['PFCand_energy_log', 60, -2, 4],
 ['PFCand_eta_rel', 100, -0.5, 0.5],
-['PFCand_phi_rel',100, -0.5, 0.5],
 ['PFCand_phiAtVtx_rel', 100, -0.5, 0.5],
 ['PFCand_deltaR', 200, 0, 0.5],
-['PFCand_caloFraction', 100, 0, 2],
 ['PFCand_hcalFraction', 90, 0, 1], 
 ['PFCand_hcalFractionCalib', 50, 0, 1],
 ['PFCand_puppiWeight', 100, 0, 1],
@@ -76,11 +77,14 @@ PFCand_list=[
 ['PFCand_dzSig', 100, -500, 500],
 ['PFCand_dxy', 100, -2, 2],
 ['PFCand_dxySig', 100, -50, 50],
-['PFCand_charge', 3, -1, 2],
 ['PFCand_pvAssocQuality', 8, 0, 8], 
-['PFCand_status', 60, 0, 2200],
 ['PFCand_pixelhits', 12, 0, 12], 
-['PFCand_nTrackerLayers', 22, 0, 22]
+['PFCand_nTrackerLayers', 22, 0, 22],
+#['PFCand_lostInnerHits', 4, 0, 4],
+['PFCand_isElectron',2,0,2],
+['PFCand_isMuon',2,0,2],
+['PFCand_isChargedHadron',2,0,2],
+['PFCand_fromPV',2,0,2]
 ]
 
 SV_list=[
@@ -112,10 +116,10 @@ lepton_list=[
 ['lepton_dz', 60, -50, 50],
 ['lepton_dxyError', 50, 0, 0.1],
 ['lepton_dzError', 30, 0, 5],
-['lepton_dxySig', 75, -500, 500],
-['lepton_dzSig', 50, -2000, 2000],
-['lepton_ip3d', 60, -25, 25],
-['lepton_sip3d', 80, -1000, 1000],
+['lepton_dxySig', 100, -10, 10],
+['lepton_dzSig', 100, -10, 10],
+['lepton_ip3d', 50, -25, 25],
+['lepton_sip3d', 80, -10, 10],
 ['lepton_dxy_sv', 40, -10, 10],
 ['lepton_genPartFlav', 60, 0, 25],
 ['lepton_chi2', 100, 0, 2000],
@@ -126,40 +130,36 @@ lepton_list=[
 ['lepton_lostHits', 5, 0, 5],
 ['lepton_e_ECAL', 100, 0, 1],
 ['lepton_e_HCAL', 100, 0, 1],
-['lepton_hoe', 90, 0, 150],
-['lepton_minisoch', 100, 0, 5],
-['lepton_minisonh', 100, 0, 2],
-['lepton_minisoph', 100, 0, 5],
-['lepton_minisoall', 100, 0, 10],
-['lepton_pfRelIso03_drcor', 100, 0, 10],
-['lepton_pfRelIso03_ChargedHadron', 50, 0, 5],
-['lepton_pfRelIso03_NeutralHadron', 50, 0, 2],
-['lepton_pfRelIso03_Photon', 50, 0, 5],
-['lepton_pfRelIso03_PileUp', 50, 0, 2],
-['lepton_tkRelIso', 50, 0, 5],
-['lepton_trkKink', 50, 0, 50],
-['lepton_nStations', 6, 0, 6],
-['lepton_segmentComp', 60, 0, 1],
-['lepton_posmatch', 100, 0, 5000],
-['lepton_isPFCand', 2, -0.5, 1.5],
-['lepton_isGlobal', 2, -0.5, 1.5],
-['lepton_isTracker', 2, -0.5, 1.5],
-['lepton_isLoose', 2, -0.5, 1.5],
-['lepton_isGoodGlobal', 2, -0.5, 1.5],
-['lepton_isMedium', 2, -0.5, 1.5],
-['lepton_isMedPr', 2, -0.5, 1.5],
-['lepton_isTight', 2, -0.5, 1.5],
-['lepton_isHighPt', 2, -0.5, 1.5],
-['lepton_isHighPttrk', 2, -0.5, 1.5],
+['lepton_hoe', 50, 0, 1],
+['lepton_minisoch', 100, 0, 0.5],
+['lepton_minisonh', 100, 0, 0.5],
+['lepton_minisoph', 100, 0, 0.5],
+['lepton_minisoall', 100, 0, 0.5],
+['lepton_pfRelIso03_drcor', 50, 0, 0.5],
+['lepton_pfRelIso03_ChargedHadron', 50, 0, 0.5],
+['lepton_pfRelIso03_NeutralHadron', 50, 0, 0.5],
+['lepton_pfRelIso03_Photon', 50, 0, 0.5],
+['lepton_pfRelIso03_PileUp', 50, 0, 0.5],
+['lepton_tkRelIso', 50, 0, 0.5],
 ['lepton_jetPtRelv2', 50, 0, 0.5],
 ['lepton_jetPtRelv2_log', 50, -5, 0],
-['lepton_jetRelIso', 90, 0, 10],
-['lepton_jetbtag', 50, 0, 1] 
+['lepton_jetRelIso', 50, 0, 2.5],
+['lepton_jetbtag', 50, 0, 1],
+['lepton_dr03HcalDepth1TowerSumEt_Rel', 50, 0, 1],
+['lepton_dr03TkSumPtHEEP_Rel', 50, 0, 0.5],
+['lepton_hcaloverecal', 50, 0, 1],
+['lepton_r9full', 125, 0, 1.25],
+['lepton_e1x5bye5x5', 50, 0, 1],
+['lepton_sigmaietaieta', 50, 0, 0.1],
+['lepton_sigmaiphiiphi', 50, 0, 0.1],
+['lepton_supcl_etaWidth', 50, 0, 0.1],
+['lepton_supcl_phiWidth', 50, 0, 0.2],
+['lepton_eInvMinusPInv', 100, -1, 1],
+['lepton_fbrem', 50, 0, 1],
+['lepton_mvaFall17V2noIso', 100, -1, 1]
 ] 
 
-#'PFCand_trackHighPurity', 'PFCand_isElectron', 'PFCand_isMuon', 'PFCand_isChargedHadron', 'PFCand_fromPV']
-
-label_list=['label_Muon_Prompt', 'label_Muon_fromTau', 'label_Muon_fromHFHadron', 'label_Muon_fromLFHadron', 'label_Muon_unknown', 'label_Muon_fromPhoton']
+label_list=['label_Electron_Prompt', 'label_Electron_fromTau', 'label_Electron_fromHFHadron', 'label_Electron_fromLFHadron', 'label_Electron_unknown', 'label_Electron_fromPhoton']
 
 #create output file
 
@@ -172,7 +172,7 @@ if not os.path.exists( output_directory ):
     logger.info( "Created output directory %s", output_directory )
 
 ref_ptbins = arr.array('d', [20,50,100,200,10000])
-ref_etabins = arr.array('d', [0,1.4,2.4])
+ref_etabins = arr.array('d', [0,1.4,3.0])
 
 output_file = TFile( output_filename, 'recreate')
 
@@ -193,7 +193,7 @@ print "# of files: ",len(fl)
 
 TreeName = "deepntuplizer"
 pt_cut = 20
-eta_cut = 2.4
+eta_cut = 3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #3.0 #2.4
 
 for y in fl:
     dirc = y.Get(TreeName)
